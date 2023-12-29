@@ -1,47 +1,65 @@
 import React from "react";
-import { StyleSheet, SafeAreaView, Text } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Text style={styles.h1}>Hello CodeSandbox</Text>
-        <Text style={styles.h2}>
-          Start editing to see some magic happen, even on your mobile device!
+const App = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.appContainer}>
+        <Text style={styles.title}>Dream AI App</Text>
+        <Text style={styles.subtitle}>
+          Welcome to our modern AI experience!
         </Text>
-        <br />
-        <br />
-        <Text style={styles.paragraph}>
-          Open Expo on your mobile device with scanning the QR code in the
-          application log under the start tab.
-        </Text>
-      </SafeAreaView>
-    );
-  }
-}
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Get Started</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    backgroundColor: "#ecf0f1",
-    padding: 8,
+    alignItems: "center",
+    backgroundColor: "#f5f5f5",
   },
-  paragraph: {
-    margin: 8,
+  appContainer: {
+    backgroundColor: "#fff",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    padding: 20,
+    borderRadius: 8,
+    width: "80%",
+    maxWidth: 400,
+    textAlign: "center",
+  },
+  title: {
+    color: "#333",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  subtitle: {
+    color: "#666",
+    fontSize: 16,
+    marginVertical: 10,
+  },
+  button: {
+    backgroundColor: "#3498db",
+    borderRadius: 4,
+    padding: 10,
+    marginTop: 10,
+  },
+  buttonText: {
+    color: "#fff",
     fontSize: 16,
     textAlign: "center",
   },
-  h1: {
-    margin: 28,
-    fontSize: 36,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
-  h2: {
-    margin: 16,
-    fontSize: 28,
-    fontWeight: "bold",
-    textAlign: "center",
-  },
 });
+
+export default App;
